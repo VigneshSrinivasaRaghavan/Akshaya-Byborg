@@ -5,7 +5,7 @@ Given('User is on the oranum home page', () => {
   I.amOnPage('/');
 });
 
-When('User searches the pshycics with partial text', () => {
+When('User searches the pshycics with <partial> text', () => {
   I.seeElement('.toolbar-search-input');
   I.click('.toolbar-search-input');
   I.fillField('.toolbar-search-input','matt');
