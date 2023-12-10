@@ -1,5 +1,5 @@
 exports.config = {
-  output: './reports',
+  output: './output',
   helpers: {
     Playwright: {
       browser: 'chromium',
@@ -35,7 +35,11 @@ exports.config = {
     eachElement: {
       enabled: true
     },
-    pauseOnFail: {}
+    pauseOnFail: {},
+    allure:{
+      enabled:true,
+      require: '@codeceptjs/allure-legacy'
+    }
   },
   stepTimeout: 0,
   stepTimeoutOverride: [{
