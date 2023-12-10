@@ -17,16 +17,26 @@ When('User opens the live pshycic', async () => {
   }
 });
 
-When('User clicks on surprise button', async () => {
+When('User clicks on {string} button', async (buttonName) => {
   I.wait(10);
-  I.waitForElement("//div[@data-id='surpriseIcon']", 60)
-  I.waitForVisible("//div[@data-id='surpriseIcon']");
-  I.click("//div[@data-id='surpriseIcon']");
+  selectButtonAndValidate(buttonName);
 });
 
 Then('User should be displayed with sign up overlay box', async () => {
+  closeSignupBox();
+});
+
+
+async function selectButtonAndValidate(buttonName){
+  const button = `//div[@data-id='${buttonName}']`;
+  I.waitForElement(button, 60)
+  I.waitForVisible(button);
+  I.click(button);
+}
+
+async function closeSignupBox(){
   const signUpBoxLocator = ".mc_dialog__header";
   const signUpBoxCloseLocator = '//div[@class="mc_js_login_or_signup"]/div/a/i';
   I.seeElement(signUpBoxLocator);
   I.click(signUpBoxCloseLocator);
-});
+}
