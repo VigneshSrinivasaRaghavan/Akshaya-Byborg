@@ -1,0 +1,29 @@
+Feature: Category and Topic validation
+
+  Scenario Outline: To validate if the displaying results are as per the selected category/topic
+    Given User is on the oranum home page
+    When User clicks on "<categoryOrTopicName>" button
+    Then User should be displayed with the selected "<categoryOrTopicName>"
+
+    Examples: 
+      | categoryOrTopicName |
+      | Astrology  |
+      | Tarot |
+    |Clairvoyance|
+    |Dream interpretation|
+    |Healing|
+    |Crystals|
+    |Mediumship|
+    |Crystal ball|
+    |Numerology|
+    |Runes|
+    |Palm reading|
+    |Energy work|
+    |Love|
+    |Career|
+    |Family|
+    |Money|
+    |Pets|
+    |Dreams|
+
+      
