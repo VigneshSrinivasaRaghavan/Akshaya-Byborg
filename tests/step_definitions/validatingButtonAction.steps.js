@@ -18,7 +18,7 @@ When('User opens the live pshycic', async () => {
 });
 
 When('User clicks on {string} button', async (buttonName) => {
-  I.wait(10);
+  I.wait(2);
   selectButtonAndValidate(buttonName);
 });
 

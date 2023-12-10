@@ -17,7 +17,7 @@ exports.config = {
   hooks: [],
   gherkin: {
     features: './tests/features/*.feature',
-    steps: ['./tests/step_definitions/searchPartialText.steps.js']
+    steps: './tests/step_definitions/*.js',
   },
   plugins: {
     screenshotOnFail: {
