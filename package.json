@@ -3,16 +3,19 @@
     "clean:reports": "rimraf output && mkdirp output",
     "open:reports": "allure serve output",
     "pretest": "npm run clean:reports",
-    "posttest": "npm run open:reports",
-    "execute:script": "npx codeceptjs run --plugins allure",
-    "test": "npm run execute:script || npm run posttest"
+    "openreport": "npm run open:reports",
+    "test": "npx codeceptjs run --plugins allure",
+    "dockerRun": "docker-compose -f docker-compose.yml up",
+    "test-local": "npm run test && npm run openreport",
+    "test-docker": "npm run dockerRun && npm run openreport"
   },
   "devDependencies": {
     "@codeceptjs/allure-legacy": "^1.0.2",
     "allure-commandline": "^2.25.0",
     "codeceptjs": "^3.4.1",
     "mkdirp": "^3.0.1",
-    "playwright": "^1.40.1",
-    "rimraf": "^5.0.1"
+    "playwright": "1.35.1",
+    "rimraf": "^5.0.1",
+    "@playwright/test": "1.35.1"
   }
 }

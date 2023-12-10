@@ -1,0 +1,8 @@
+version: '2'
+services:
+  codecept-test:
+    image: codeceptplaywrightjs
+    build: .
+    container_name: codeceptplaywright_docker
+    volumes:
+      - ./:/tests
