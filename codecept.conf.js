@@ -4,7 +4,7 @@ exports.config = {
     Playwright: {
       browser: 'chromium',
       url: 'https://www.oranum.com/',
-      show: true
+      show: false
     }
   },
   include: {
