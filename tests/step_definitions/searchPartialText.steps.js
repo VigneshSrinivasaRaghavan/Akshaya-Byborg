@@ -1,9 +1,5 @@
 const { I } = inject();
 
-Given('User is on the oranum home page', () => {
-  I.amOnPage('/');
-});
-
 When('User searches the pshycics with {string} text', (word) => {
   I.seeElement('.toolbar-search-input');
   I.click('.toolbar-search-input');
